@@ -182,11 +182,10 @@ server.get("/api/projects/:id/actions", (req, res) => {
         res.status(200).json(allActions);
       }
     })
-    .catch(err =>
-      res
-        .status(500)
-        .json({ error: "The actions of the projects could not be retrieved" })
-    );
+    .catch(err);
+  res
+    .status(500)
+    .json({ error: "The actions of the projects could not be retrieved" });
 });
 
 server.listen(4000);
